@@ -57,7 +57,7 @@ rule win_iceid_core_ldr_202104 {
    condition:
       uint16(0) == 0x5a4d and
       filesize < 5000KB and 
-      ( $internal_name or all of ($s*) )
+      ( $internal_name and 5 of them )
       or all of them
 }
 
